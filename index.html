@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Вечерние предложения Karak House в Караганде. Забронируйте любимые десерты и заберите с собой.">
+<title>Karak House — вкусный вечер</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23372a22'/%3E%3Ctext x='20' y='29' text-anchor='middle' fill='%23e7f5a0' font-size='29' font-family='Georgia'%3Ek%3C/text%3E%3C/svg%3E">
+<style>
+:root{color-scheme:light;--page:#e8e1d6;--bg:#f8f3e9;--card:#fffdf8;--ink:#38291f;--muted:#78695b;--line:#e5dccd;--soft:#eee6d8;--button:#3b2a20;--button-text:#fff9ed;--lime:#d6ed85;--lime-ink:#304017;--green:#176c43;--error:#a33425;--shadow:0 16px 60px #39251b0c}
+@media(prefers-color-scheme:dark){:root{color-scheme:dark;--page:#15120f;--bg:#211c17;--card:#2c251e;--ink:#f7edde;--muted:#bfaf9d;--line:#46392e;--soft:#382e24;--button:#ead8bb;--button-text:#30251c;--lime:#cee47e;--lime-ink:#293816;--green:#238654;--error:#ffb3a2;--shadow:0 16px 60px #0003}}
+*{box-sizing:border-box}body{margin:0;background:var(--page);color:var(--ink);font:16px/1.5 Arial,Helvetica,sans-serif}button,input{font:inherit}button,a,input{ -webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{cursor:pointer}button:disabled{cursor:default;opacity:.6}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #809f39;outline-offset:4px}button{border:0}a{color:inherit}[hidden]{display:none!important}.app{max-width:480px;min-height:100vh;margin:auto;background:var(--bg);box-shadow:var(--shadow);padding: max(22px,env(safe-area-inset-top)) 22px max(24px,env(safe-area-inset-bottom))}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font:bold 26px/.9 Georgia,serif;letter-spacing:-1.1px}.brand span{display:block;font:10px/2 Arial,sans-serif;letter-spacing:4.7px;margin-left:2px}.city{font-size:13px;color:var(--muted);text-align:right}.city b{display:block;font-size:12px;font-weight:400}.tabs{display:flex;background:var(--soft);padding:5px;border-radius:14px;margin:25px 0 24px;gap:4px}.tab{flex:1;border-radius:10px;min-height:44px;background:transparent;color:var(--muted);font-weight:600}.tab[aria-selected=true]{background:var(--card);color:var(--ink);box-shadow:0 2px 5px #30251c0b}.eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:0 0 8px}.intro{position:relative;padding-right:60px}.intro h1{font:normal 37px/1.08 Georgia,serif;letter-spacing:-1.1px;margin:0 0 13px}.intro p{font-size:14px;color:var(--muted);margin:0}.seal{position:absolute;right:0;top:5px;width:61px;height:61px;background:var(--lime);color:var(--lime-ink);border-radius:50%;display:grid;place-content:center;transform:rotate(12deg);font-size:12px;text-align:center;line-height:1.1}.seal strong{font:24px Georgia,serif}.hours{display:flex;flex-wrap:wrap;gap:5px 16px;margin:20px 0 23px;padding:12px 0;border-block:1px solid var(--line);font-size:12px;color:var(--muted)}.section-title{display:flex;align-items:baseline;justify-content:space-between;margin:0 0 14px;gap:10px}.section-title h2{font-size:17px;margin:0;font-weight:600}.section-title span{font-size:12px;color:var(--muted)}.offers{display:grid;gap:16px}.offer{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;padding:12px}.offer-top{display:grid;grid-template-columns:116px minmax(0,1fr);gap:14px}.photo{width:116px;height:116px;position:relative;overflow:hidden;border-radius:11px;background:var(--soft);display:grid;place-content:center;text-align:center}.photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}.photo-placeholder{font-size:12px;color:var(--muted);padding:12px}.photo-placeholder b{display:block;font:italic 24px Georgia,serif;margin-bottom:5px}.discount{position:absolute;bottom:7px;left:7px;background:var(--lime);color:var(--lime-ink);padding:3px 8px;border-radius:6px;font-size:13px;font-weight:700}.restaurant{font-size:10px;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);margin:2px 0 5px}.offer h3{font:normal 19px/1.2 Georgia,serif;margin:0 0 10px;overflow-wrap:anywhere}.prices{display:flex;gap:9px;align-items:baseline;flex-wrap:wrap}.price{font-weight:700;font-size:20px;white-space:nowrap}del{font-size:12px;color:var(--muted);white-space:nowrap}.details{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap;font-size:12px;margin-top:14px}.portions{color:var(--muted)}.address{font-size:12px;color:var(--muted);margin:7px 0 13px;overflow-wrap:anywhere}.primary{display:block;width:100%;padding:12px 14px;background:var(--button);color:var(--button-text);border-radius:10px;font-weight:600;font-size:14px;min-height:46px}.primary:disabled{background:var(--soft);color:var(--muted);opacity:1}.footnote{text-align:center;font-size:12px;color:var(--muted);margin:24px 0 0}.demo{font-size:12px;line-height:1.5;color:var(--muted);padding:12px;border:1px dashed var(--line);border-radius:10px;margin:20px 0 0}h2{font:normal 28px/1.15 Georgia,serif;margin:0 0 10px}.subtitle{font-size:14px;color:var(--muted);margin:0 0 20px}.form{padding:18px;background:var(--card);border:1px solid var(--line);border-radius:16px}.field{display:block;font-size:13px;font-weight:600;margin-bottom:14px}.field input{display:block;width:100%;min-width:0;margin-top:6px;border:1px solid var(--line);border-radius:8px;padding:10px;background:var(--bg);color:var(--ink);font-size:16px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.help{font-size:12px;color:var(--muted);font-weight:400;display:block;margin-top:5px}.preview{width:100%;height:170px;object-fit:cover;border-radius:8px;margin-bottom:14px}.error{color:var(--error);font-size:14px;margin:10px 0}.notice{font-size:14px;color:var(--green);margin:12px 0}.bookings-title{margin-top:28px;font-size:24px}.empty{padding:25px 15px;text-align:center;color:var(--muted);font-size:14px;border:1px dashed var(--line);border-radius:12px}.booking{padding:16px;background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow-wrap:anywhere}.booking h3{font-size:16px;margin:0 0 8px}.booking p{font-size:14px;margin:4px 0;color:var(--muted)}dialog{width:calc(100% - 32px);max-width:432px;padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--card);color:var(--ink);max-height:90dvh;overflow:auto}dialog::backdrop{background:#1c130eb3;backdrop-filter:blur(4px)}.dialog-top{display:flex;justify-content:space-between;align-items:start;gap:12px}.close{width:38px;height:38px;flex-shrink:0;border-radius:50%;background:var(--soft);color:var(--ink);font-size:24px}.summary{padding:12px;background:var(--soft);border-radius:10px;font-size:14px;margin:14px 0 18px;white-space:pre-line;overflow-wrap:anywhere}.whatsapp{display:block;text-align:center;text-decoration:none;background:var(--green);color:#fff;font-size:14px;font-weight:600;border-radius:10px;padding:14px;margin-top:16px}.success-icon{width:48px;height:48px;background:var(--lime);color:var(--lime-ink);border-radius:50%;display:grid;place-items:center;font-size:25px;margin-bottom:15px}.success-copy{font-size:14px;color:var(--muted)}
+@media(max-width:360px){.app{padding-inline:14px}.offer-top{grid-template-columns:98px minmax(0,1fr);gap:10px}.photo{width:98px;height:98px}.intro h1{font-size:32px}.row{grid-template-columns:1fr}.offer h3{font-size:18px}}
+@media(prefers-reduced-motion:no-preference){button,a{transition:background .15s,transform .15s}.primary:not(:disabled):active{transform:scale(.98)}}
+</style>
+</head>
+<body>
+<main class="app">
+ <header class="top"><div class="brand" aria-label="Karak House">karak<span>HOUSE</span></div><div class="city">Караганда<b>Арбат · Бухар-Жырау, 55/7</b></div></header>
+ <nav class="tabs" role="tablist" aria-label="Для кого"><button id="guest-tab" class="tab" role="tab" aria-selected="true" aria-controls="guests" onclick="showTab('guests')">Гостям</button><button id="owner-tab" class="tab" role="tab" aria-selected="false" aria-controls="owner" tabindex="-1" onclick="showTab('owner')">Ресторану</button></nav>
+ <section id="guests" role="tabpanel" aria-labelledby="guest-tab">
+  <div class="intro"><p class="eyebrow">Вечер в Karak House</p><h1>Хороший вечер.<br>Вкусная скидка.</h1><p>Любимые десерты — с собой.<br>Заберите сегодня по приятной цене.</p><div class="seal" aria-hidden="true">до<strong>−30%</strong></div></div>
+  <div class="hours"><span>Кухня до 22:00</span><span>Ждём вас до 00:00</span><span>Оплата при получении</span></div>
+  <div class="section-title"><h2>Сегодня на десерт</h2><span id="offer-count"></span></div>
+  <div id="offers" class="offers"></div>
+  <p class="footnote">Меньше остатков. Больше вкусных вечеров.</p>
+  <p class="demo">Демо для владельца. Цены — примеры, фото ожидаются. Брони сохраняются только до обновления страницы.</p>
+ </section>
+ <section id="owner" role="tabpanel" aria-labelledby="owner-tab" hidden>
+  <h2>Вкусное не должно ждать</h2><p class="subtitle">Добавьте вечернее предложение — гости смогут забронировать порцию.</p>
+  <form id="offer-form" class="form">
+   <label class="field">Ресторан<input name="restaurant" required maxlength="80" value="Karak House"></label>
+   <label class="field">Название блюда<input name="dish" required maxlength="100" placeholder="Например, японские панкейки"></label>
+   <div class="row"><label class="field">Обычная цена, ₸<input name="oldPrice" type="number" min="1" max="1000000" step="1" required placeholder="2 400"></label><label class="field">Цена со скидкой, ₸<input name="price" type="number" min="1" max="1000000" step="1" required placeholder="1 680"></label></div>
+   <div class="row"><label class="field">Порций<input name="portions" type="number" min="1" max="999" step="1" value="3" required></label><label class="field">Забрать до<input name="pickup" type="time" value="22:00" required><span class="help">00:00 — полночь</span></label></div>
+   <label class="field">Адрес<input name="address" required maxlength="160" value="Арбат, Бухар-Жырау 55/7"></label>
+   <label class="field">WhatsApp ресторана<input name="whatsapp" type="tel" autocomplete="tel" required placeholder="+7 (7XX) XXX-XX-XX"><span class="help">Международный номер с кодом страны.</span></label>
+   <label class="field">Фото блюда<input id="photo-input" type="file" accept="image/jpeg,image/png,image/webp"><span class="help">JPG, PNG или WebP, до 5 МБ.</span></label>
+   <img id="photo-preview" class="preview" alt="Предпросмотр фото блюда" hidden>
+   <p id="offer-error" class="error" role="alert" hidden></p>
+   <button id="publish" class="primary" type="submit">Опубликовать предложение</button>
+   <p id="publish-notice" class="notice" role="status" hidden></p>
+  </form>
+  <h2 class="bookings-title">Бронирования <span id="booking-count">· 0</span></h2><div id="bookings" aria-live="polite"></div>
+ </section>
+</main>
+<dialog id="booking-dialog" aria-labelledby="dialog-title">
+ <div class="dialog-top"><h2 id="dialog-title">Оставим вам порцию</h2><button class="close" onclick="closeBooking()" aria-label="Закрыть">×</button></div>
+ <form id="booking-form">
+  <p id="booking-summary" class="summary"></p>
+  <label class="field">Ваше имя<input id="guest-name" required maxlength="80" autocomplete="given-name" placeholder="Как к вам обращаться?"></label>
+  <label class="field">Телефон<input id="guest-phone" type="tel" required autocomplete="tel" placeholder="+7 (7XX) XXX-XX-XX"></label>
+  <p class="subtitle">Одна бронь — одна порция. Оплатите при получении в ресторане.</p>
+  <p id="booking-error" class="error" role="alert" hidden></p>
+  <button class="primary" type="submit">Подтвердить бронь</button>
+ </form>
+ <div id="booking-success" hidden><div class="success-icon" aria-hidden="true">✓</div><p id="success-details" class="summary"></p><p class="success-copy">Демо-бронь создана. Чтобы сообщить ресторану, отправьте готовое сообщение в WhatsApp.</p><a id="whatsapp-link" class="whatsapp" target="_blank" rel="noopener noreferrer">Написать ресторану в WhatsApp</a><p id="missing-whatsapp" class="demo" hidden>Номер ресторана пока не указан. Владелец может добавить предложение со своим WhatsApp во вкладке «Ресторану».</p></div>
+</dialog>
+<script>
+// All data lives in memory. Refreshing the page resets this demo.
+// Replace these example prices with the owner's menu prices.
+// Paste each supplied photo as "data:image/jpeg;base64,..." in its photo field.
+// Add the verified restaurant number (country code + digits) here.
+var restaurantWhatsapp = '';
+var offers = [
+ {id:1,restaurant:'Karak House',dish:'Японские панкейки с ягодами',oldPrice:2400,price:1680,portions:3,pickup:'22:00',address:'Арбат, Бухар-Жырау 55/7',whatsapp:restaurantWhatsapp,photo:''},
+ {id:2,restaurant:'Karak House',dish:'Бабл-вафля с шоколадом',oldPrice:2200,price:1540,portions:2,pickup:'22:00',address:'Арбат, Бухар-Жырау 55/7',whatsapp:restaurantWhatsapp,photo:''},
+ {id:3,restaurant:'Karak House',dish:'Карак чай',oldPrice:1000,price:700,portions:5,pickup:'23:00',address:'Арбат, Бухар-Жырау 55/7',whatsapp:restaurantWhatsapp,photo:''},
+ {id:4,restaurant:'Karak House',dish:'Панкейки с бананом',oldPrice:2300,price:1610,portions:2,pickup:'22:00',address:'Арбат, Бухар-Жырау 55/7',whatsapp:restaurantWhatsapp,photo:''},
+ {id:5,restaurant:'Karak House',dish:'Шоколадный брауни',oldPrice:1500,price:1050,portions:4,pickup:'23:30',address:'Арбат, Бухар-Жырау 55/7',whatsapp:restaurantWhatsapp,photo:''},
+ {id:6,restaurant:'Karak House',dish:'Классический чизкейк',oldPrice:2000,price:1400,portions:0,pickup:'00:00',address:'Арбат, Бухар-Жырау 55/7',whatsapp:restaurantWhatsapp,photo:''}
+];
+var bookings = [];
+var selectedOffer = null;
+var uploadedPhoto = '';
+var photoLoading = false;
+var photoRequest = 0;
+var dialog = document.getElementById('booking-dialog');
+
+function money(value) { return value.toLocaleString('ru-RU') + ' ₸'; }
+// Escape user text before placing it inside HTML.
+function escapeHtml(value) {
+ return String(value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+function phoneDigits(value) { return value.replace(/\D/g,''); }
+function validPhone(value) { return /^[+\d\s()-]+$/.test(value) && /^[1-9]\d{9,14}$/.test(phoneDigits(value)); }
+function showError(id,text) { var el=document.getElementById(id); el.textContent=text; el.hidden=!text; }
+function showTab(tab) {
+ var guest=tab==='guests';
+ document.getElementById('guests').hidden=!guest;
+ document.getElementById('owner').hidden=guest;
+ document.getElementById('guest-tab').setAttribute('aria-selected',String(guest));
+ document.getElementById('owner-tab').setAttribute('aria-selected',String(!guest));
+ document.getElementById('guest-tab').tabIndex=guest?0:-1;
+ document.getElementById('owner-tab').tabIndex=guest?-1:0;
+}
+document.querySelector('.tabs').addEventListener('keydown',function(event){
+ if(event.key==='ArrowLeft'||event.key==='ArrowRight'||event.key==='Home'||event.key==='End'){
+  event.preventDefault();
+  var guest=event.key==='Home'||(event.key!=='End'&&document.getElementById('guest-tab').getAttribute('aria-selected')!=='true');
+  showTab(guest?'guests':'owner');document.getElementById(guest?'guest-tab':'owner-tab').focus();
+ }
+});
+function renderOffers() {
+ var html='';var available=0;
+ for(var i=0;i<offers.length;i++){
+  var offer=offers[i];
+  if(offer.portions>0) available++;
+  var discount=Math.round((1-offer.price/offer.oldPrice)*100);
+  html+='<article class="offer"><div class="offer-top"><div class="photo">';
+  if(offer.photo){html+='<img src="'+escapeHtml(offer.photo)+'" alt="'+escapeHtml(offer.dish)+'">';}
+  else{html+='<div class="photo-placeholder"><b>karak</b>Фото ожидается</div>';}
+  html+='<span class="discount">−'+discount+'%</span></div><div><p class="restaurant">'+escapeHtml(offer.restaurant)+'</p><h3>'+escapeHtml(offer.dish)+'</h3><div class="prices"><span class="price">'+money(offer.price)+'</span><del>'+money(offer.oldPrice)+'</del></div></div></div>';
+  html+='<div class="details"><span class="portions">Осталось порций: '+offer.portions+'</span><span>Забрать до '+escapeHtml(offer.pickup)+'</span></div><p class="address">'+escapeHtml(offer.address)+'</p>';
+  html+='<button class="primary" onclick="openBooking('+offer.id+')" '+(offer.portions===0?'disabled':'')+'>'+(offer.portions===0?'Всё разобрали':'Забронировать')+'</button></article>';
+ }
+ document.getElementById('offers').innerHTML=html;
+ document.getElementById('offer-count').textContent='Доступно: '+available;
+}
+function renderBookings(){
+ var html='';
+ for(var i=bookings.length-1;i>=0;i--){
+  var booking=bookings[i];
+  html+='<article class="booking"><h3>№ '+booking.id+' · '+escapeHtml(booking.dish)+'</h3><p>'+escapeHtml(booking.restaurant)+' · '+money(booking.price)+'</p><p>'+escapeHtml(booking.name)+' · '+escapeHtml(booking.phone)+'</p><p>1 порция · забрать до '+escapeHtml(booking.pickup)+'</p><p>'+escapeHtml(booking.address)+'</p><p>Оплата при получении</p></article>';
+ }
+ document.getElementById('bookings').innerHTML=html||'<p class="empty">Здесь появятся бронирования гостей.<br>Пока можно поставить чайник.</p>';
+ document.getElementById('booking-count').textContent='· '+bookings.length;
+}
+function openBooking(id){
+ selectedOffer=null;
+ for(var i=0;i<offers.length;i++){if(offers[i].id===id) selectedOffer=offers[i];}
+ if(!selectedOffer||selectedOffer.portions<1) return;
+ document.getElementById('booking-form').reset();
+ document.getElementById('booking-form').hidden=false;
+ document.getElementById('booking-success').hidden=true;
+ document.getElementById('dialog-title').textContent='Оставим вам порцию';
+ document.getElementById('booking-summary').textContent=selectedOffer.dish+' · '+money(selectedOffer.price)+'\nЗабрать до '+selectedOffer.pickup+' · '+selectedOffer.address;
+ showError('booking-error','');dialog.showModal();document.getElementById('guest-name').focus();
+}
+function closeBooking(){dialog.close();}
+dialog.addEventListener('close',function(){selectedOffer=null;});
+document.getElementById('booking-form').addEventListener('submit',function(event){
+ event.preventDefault();
+ if(!selectedOffer||selectedOffer.portions<1){showError('booking-error','Эту порцию уже забрали. Выберите другое предложение.');return;}
+ var name=document.getElementById('guest-name').value.trim();
+ var phone=document.getElementById('guest-phone').value.trim();
+ if(!name){showError('booking-error','Укажите ваше имя.');return;}
+ if(!validPhone(phone)){showError('booking-error','Введите номер с кодом страны, например +7 701 123 45 67.');return;}
+ var booking={id:bookings.length+1,offerId:selectedOffer.id,restaurant:selectedOffer.restaurant,dish:selectedOffer.dish,price:selectedOffer.price,pickup:selectedOffer.pickup,address:selectedOffer.address,name:name,phone:phone};
+ selectedOffer.portions=selectedOffer.portions-1;
+ bookings.push(booking);renderOffers();renderBookings();
+ var message='Здравствуйте! Демо-бронь № '+booking.id+' в '+booking.restaurant+': '+booking.dish+', 1 порция, '+money(booking.price)+'. Имя: '+name+'. Телефон: '+phone+'. Заберу до '+booking.pickup+' по адресу: '+booking.address+'. Оплата при получении.';
+ var link=document.getElementById('whatsapp-link');
+ var number=phoneDigits(selectedOffer.whatsapp);
+ link.hidden=!number;
+ link.removeAttribute('href');
+ if(number) link.href='https://wa.me/'+number+'?text='+encodeURIComponent(message);
+ document.getElementById('missing-whatsapp').hidden=!!number;
+ document.getElementById('booking-form').hidden=true;
+ document.getElementById('booking-success').hidden=false;
+ document.getElementById('dialog-title').textContent='Порция за вами!';
+ document.getElementById('success-details').textContent='Бронь № '+booking.id+' · '+booking.dish+'\n'+money(booking.price)+' · до '+booking.pickup+'\n'+booking.address;
+ selectedOffer=null;
+ document.querySelector('.close').focus();
+});
+document.getElementById('photo-input').addEventListener('change',function(){
+ var request=++photoRequest;
+ var file=this.files[0];
+ var preview=document.getElementById('photo-preview');
+ uploadedPhoto='';preview.hidden=true;preview.removeAttribute('src');photoLoading=false;
+ document.getElementById('publish').disabled=false;showError('offer-error','');
+ if(!file) return;
+ if(!/^image\/(jpeg|png|webp)$/.test(file.type)||file.size>5*1024*1024){this.value='';showError('offer-error','Выберите JPG, PNG или WebP размером до 5 МБ.');return;}
+ photoLoading=true;document.getElementById('publish').disabled=true;
+ var reader=new FileReader();
+ reader.onload=function(){
+  if(request!==photoRequest)return;
+  var check=new Image();
+  check.onload=function(){if(request!==photoRequest)return;uploadedPhoto=reader.result;preview.src=uploadedPhoto;preview.hidden=false;photoLoading=false;document.getElementById('publish').disabled=false;};
+  check.onerror=function(){if(request!==photoRequest)return;photoLoading=false;document.getElementById('publish').disabled=false;document.getElementById('photo-input').value='';showError('offer-error','Не удалось открыть изображение. Выберите другой файл.');};
+  check.src=reader.result;
+ };
+ reader.onerror=function(){if(request!==photoRequest)return;photoLoading=false;document.getElementById('publish').disabled=false;document.getElementById('photo-input').value='';showError('offer-error','Не удалось прочитать фото. Попробуйте снова.');};
+ reader.readAsDataURL(file);
+});
+document.getElementById('offer-form').addEventListener('submit',function(event){
+ event.preventDefault();if(photoLoading)return;
+ var fields=this.elements;
+ var restaurant=fields.restaurant.value.trim();var dish=fields.dish.value.trim();var address=fields.address.value.trim();
+ var oldPrice=Number(fields.oldPrice.value);var price=Number(fields.price.value);var portions=Number(fields.portions.value);
+ if(!restaurant||!dish||!address){showError('offer-error','Заполните ресторан, блюдо и адрес.');return;}
+ if(price>=oldPrice){showError('offer-error','Цена со скидкой должна быть ниже обычной.');return;}
+ if(!validPhone(fields.whatsapp.value)){showError('offer-error','Укажите WhatsApp ресторана с кодом страны.');return;}
+ offers.push({id:offers.length+1,restaurant:restaurant,dish:dish,oldPrice:oldPrice,price:price,portions:portions,pickup:fields.pickup.value,address:address,whatsapp:phoneDigits(fields.whatsapp.value),photo:uploadedPhoto});
+ renderOffers();showError('offer-error','');
+ document.getElementById('publish-notice').textContent='«'+dish+'» опубликовано во вкладке «Гостям».';
+ document.getElementById('publish-notice').hidden=false;
+ fields.dish.value='';fields.oldPrice.value='';fields.price.value='';fields.portions.value='3';
+ document.getElementById('photo-input').value='';uploadedPhoto='';photoRequest++;document.getElementById('photo-preview').hidden=true;
+});
+renderOffers();renderBookings();
+</script>
+</body>
+</html>
