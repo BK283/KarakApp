@@ -7,6 +7,7 @@
 <meta name="description" content="Вечерние предложения Karak House в Караганде. Забронируйте любимые десерты и заберите с собой.">
 <title>Karak House — вкусный вечер</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23372a22'/%3E%3Ctext x='20' y='29' text-anchor='middle' fill='%23e7f5a0' font-size='29' font-family='Georgia'%3Ek%3C/text%3E%3C/svg%3E">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
 :root{color-scheme:light;--page:#e8e1d6;--bg:#f8f3e9;--card:#fffdf8;--ink:#38291f;--muted:#78695b;--line:#e5dccd;--soft:#eee6d8;--button:#3b2a20;--button-text:#fff9ed;--lime:#d6ed85;--lime-ink:#304017;--green:#176c43;--error:#a33425;--shadow:0 16px 60px #39251b0c}
 @media(prefers-color-scheme:dark){:root{color-scheme:dark;--page:#15120f;--bg:#211c17;--card:#2c251e;--ink:#f7edde;--muted:#bfaf9d;--line:#46392e;--soft:#382e24;--button:#ead8bb;--button-text:#30251c;--lime:#cee47e;--lime-ink:#293816;--green:#238654;--error:#ffb3a2;--shadow:0 16px 60px #0003}}
@@ -55,14 +56,14 @@
   <p id="booking-error" class="error" role="alert" hidden></p>
   <button class="primary" type="submit">Подтвердить бронь</button>
  </form>
- <div id="booking-success" hidden><div class="success-icon" aria-hidden="true">✓</div><p id="success-details" class="summary"></p><p class="success-copy">Демо-бронь создана. Чтобы сообщить ресторану, отправьте готовое сообщение в WhatsApp.</p><a id="whatsapp-link" class="whatsapp" target="_blank" rel="noopener noreferrer">Написать ресторану в WhatsApp</a><p id="missing-whatsapp" class="demo" hidden>Номер ресторана пока не указан. Владелец может добавить предложение со своим WhatsApp во вкладке «Ресторану».</p></div>
+ <div id="booking-success" hidden><div class="success-icon" aria-hidden="true">✓</div><p id="success-details" class="summary"></p><p class="success-copy">Покажите этот код в ресторане. Чтобы ресторан узнал о брони, отправьте готовое сообщение в WhatsApp.</p><a id="whatsapp-link" class="whatsapp" target="_blank" rel="noopener noreferrer">Написать ресторану в WhatsApp</a><p id="missing-whatsapp" class="demo" hidden>Номер ресторана пока не указан. Владелец может добавить предложение со своим WhatsApp во вкладке «Ресторану».</p></div>
 </dialog>
 <script>
 // All data lives in memory. Refreshing the page resets this demo.
 // Replace these example prices with the owner's menu prices.
 // Paste each supplied photo as "data:image/jpeg;base64,..." in its photo field.
 // Add the verified restaurant number (country code + digits) here.
-var restaurantWhatsapp = '';
+var restaurantWhatsapp = '+77082701028';
 var offers = [
  {id:1,restaurant:'Karak House',dish:'Японские панкейки с ягодами',oldPrice:2400,price:1680,portions:3,pickup:'22:00',address:'Арбат, Бухар-Жырау 55/7',whatsapp:restaurantWhatsapp,photo:''},
  {id:2,restaurant:'Karak House',dish:'Бабл-вафля с шоколадом',oldPrice:2200,price:1540,portions:2,pickup:'22:00',address:'Арбат, Бухар-Жырау 55/7',whatsapp:restaurantWhatsapp,photo:''},
@@ -77,6 +78,8 @@ var uploadedPhoto = '';
 var photoLoading = false;
 var photoRequest = 0;
 var dialog = document.getElementById('booking-dialog');
+var tg = window.Telegram && window.Telegram.WebApp;
+if (tg) { try { tg.ready(); tg.expand(); } catch (e) {} }
 
 function money(value) { return value.toLocaleString('ru-RU') + ' ₸'; }
 // Escape user text before placing it inside HTML.
@@ -122,7 +125,7 @@ function renderBookings(){
  var html='';
  for(var i=bookings.length-1;i>=0;i--){
   var booking=bookings[i];
-  html+='<article class="booking"><h3>№ '+booking.id+' · '+escapeHtml(booking.dish)+'</h3><p>'+escapeHtml(booking.restaurant)+' · '+money(booking.price)+'</p><p>'+escapeHtml(booking.name)+' · '+escapeHtml(booking.phone)+'</p><p>1 порция · забрать до '+escapeHtml(booking.pickup)+'</p><p>'+escapeHtml(booking.address)+'</p><p>Оплата при получении</p></article>';
+  html+='<article class="booking"><h3>'+booking.code+' · '+escapeHtml(booking.dish)+'</h3><p>'+escapeHtml(booking.restaurant)+' · '+money(booking.price)+'</p><p>'+escapeHtml(booking.name)+' · '+escapeHtml(booking.phone)+'</p><p>1 порция · забрать до '+escapeHtml(booking.pickup)+'</p><p>'+escapeHtml(booking.address)+'</p><p>Оплата при получении</p></article>';
  }
  document.getElementById('bookings').innerHTML=html||'<p class="empty">Здесь появятся бронирования гостей.<br>Пока можно поставить чайник.</p>';
  document.getElementById('booking-count').textContent='· '+bookings.length;
@@ -147,10 +150,12 @@ document.getElementById('booking-form').addEventListener('submit',function(event
  var phone=document.getElementById('guest-phone').value.trim();
  if(!name){showError('booking-error','Укажите ваше имя.');return;}
  if(!validPhone(phone)){showError('booking-error','Введите номер с кодом страны, например +7 701 123 45 67.');return;}
- var booking={id:bookings.length+1,offerId:selectedOffer.id,restaurant:selectedOffer.restaurant,dish:selectedOffer.dish,price:selectedOffer.price,pickup:selectedOffer.pickup,address:selectedOffer.address,name:name,phone:phone};
+ var chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';var code='';
+ for(var c=0;c<4;c++){code+=chars.charAt(Math.floor(Math.random()*chars.length));}
+ var booking={id:bookings.length+1,code:code,offerId:selectedOffer.id,restaurant:selectedOffer.restaurant,dish:selectedOffer.dish,price:selectedOffer.price,pickup:selectedOffer.pickup,address:selectedOffer.address,name:name,phone:phone};
  selectedOffer.portions=selectedOffer.portions-1;
  bookings.push(booking);renderOffers();renderBookings();
- var message='Здравствуйте! Демо-бронь № '+booking.id+' в '+booking.restaurant+': '+booking.dish+', 1 порция, '+money(booking.price)+'. Имя: '+name+'. Телефон: '+phone+'. Заберу до '+booking.pickup+' по адресу: '+booking.address+'. Оплата при получении.';
+ var message='Новая бронь '+booking.code+' ('+booking.restaurant+')\nИмя: '+name+'\nТелефон: '+phone+'\nЗаказ: '+booking.dish+', 1 порция, '+money(booking.price)+'\nЗабрать до '+booking.pickup+'\nОплата при получении.';
  var link=document.getElementById('whatsapp-link');
  var number=phoneDigits(selectedOffer.whatsapp);
  link.hidden=!number;
@@ -160,7 +165,7 @@ document.getElementById('booking-form').addEventListener('submit',function(event
  document.getElementById('booking-form').hidden=true;
  document.getElementById('booking-success').hidden=false;
  document.getElementById('dialog-title').textContent='Порция за вами!';
- document.getElementById('success-details').textContent='Бронь № '+booking.id+' · '+booking.dish+'\n'+money(booking.price)+' · до '+booking.pickup+'\n'+booking.address;
+ document.getElementById('success-details').textContent='Код брони: '+booking.code+'\n'+booking.dish+'\n'+money(booking.price)+' · до '+booking.pickup+'\n'+booking.address;
  selectedOffer=null;
  document.querySelector('.close').focus();
 });
@@ -200,6 +205,7 @@ document.getElementById('offer-form').addEventListener('submit',function(event){
  document.getElementById('photo-input').value='';uploadedPhoto='';photoRequest++;document.getElementById('photo-preview').hidden=true;
 });
 renderOffers();renderBookings();
+document.getElementById('whatsapp-link').addEventListener('click',function(event){if(tg&&tg.openLink){event.preventDefault();tg.openLink(this.href);}});
 </script>
 </body>
 </html>
